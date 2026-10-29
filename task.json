@@ -1,0 +1,66 @@
+{
+  "atomCode": "disk-usage",
+  "name": "Disk usage",
+  "version": "1.0.0",
+  "description": "Measures the workspace and extra paths, by top-level directory, with an optional budget.",
+  "execution": {
+    "packagePath": "disk-usage.jar",
+    "language": "java",
+    "target": "$atom_java_path -cp disk-usage.jar com.jenkinschina.atom.sdk.AtomRunner"
+  },
+  "input": {
+    "label": {
+      "label": "报告名称",
+      "type": "vuex-input",
+      "default": "Disk usage"
+    },
+    "outDir": {
+      "label": "HTML 输出目录",
+      "type": "vuex-input",
+      "default": "out/disk"
+    },
+    "extraPaths": {
+      "label": "额外统计的绝对路径（逗号分隔）",
+      "type": "vuex-input",
+      "default": ""
+    },
+    "maxMb": {
+      "label": "预算（MB，0 = 不检查）",
+      "type": "vuex-input",
+      "default": "0"
+    },
+    "topN": {
+      "label": "最大文件列表条数",
+      "type": "vuex-input-number",
+      "default": "15"
+    }
+  },
+  "output": {
+    "bytes": {
+      "type": "string",
+      "description": "总字节"
+    },
+    "human": {
+      "type": "string",
+      "description": "人类可读"
+    },
+    "files": {
+      "type": "string",
+      "description": "文件数"
+    },
+    "mb": {
+      "type": "string",
+      "description": "总 MB"
+    },
+    "report": {
+      "type": "report",
+      "description": "构建页内嵌报告"
+    }
+  },
+  "x-jenkins": {
+    "protocol": "jenkins-1",
+    "requires": {
+      "runner": ">=0.4.0"
+    }
+  }
+}

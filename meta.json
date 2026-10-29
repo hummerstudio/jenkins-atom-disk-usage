@@ -1,0 +1,11 @@
+{
+  "name": "Disk usage",
+  "summary": "Measures the workspace and extra paths, by top-level directory, with an optional budget.",
+  "author": "hummerstudio",
+  "license": "MIT",
+  "tags": [
+    "official-port",
+    "disk-usage"
+  ],
+  "homepage": "https://github.com/hummerstudio/jenkins-atom-disk-usage"
+}
